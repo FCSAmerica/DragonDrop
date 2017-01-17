@@ -179,6 +179,8 @@ var ImageController = function ($scope) {
         var countFinished = 0;
         var newImages = [];
         var totalNumberOfFiles = 0;
+        var filesUploaded;
+        var currentFileUpload;
 
         function handlePluploadFilesAdded(uploader, files) {
             //Reset countFinished
@@ -194,20 +196,15 @@ var ImageController = function ($scope) {
             $('#myModal').on('show.bs.modal', function () {
 
                 files = [].slice.call(files);
-
-                for (var i = 0, file; file = files[i]; i++) {
-                    if (file.type.match(/image.*/)) {
-
-                        showImagePreview(file, files.length);
-                    }
-                }
-                $scope.shouldConfirmReload = true;
-                $('#myModal').unbind('show');
+                filesUploaded = files;
+                currentFileUpload = 0;
+                showImagePreview(filesUploaded[currentFileUpload], filesUploaded.length);
             });
             $('#myModal').modal('show');
         }
 
         function showImagePreview(file, totalFiles) {
+            console.log(filesUploaded[currentFileUpload]);
             totalNumberOfFiles = totalFiles;
             var options = { meta: true, orientation: true, maxHeight: imageSize, maxWidth: imageSize };
             loadImage(file.getNative(), finishLoadingImages, options);
@@ -231,23 +228,19 @@ var ImageController = function ($scope) {
                 $('#myModal').modal('hide');
 
                 console.log("Pushing");
-                newImages.sort(function (a, b) {
-                    if (a.name.toUpperCase() > b.name.toUpperCase()) {
-                        return 1;
-                    }
-                    if (a.name.toUpperCase() < b.name.toUpperCase()) {
-                        return -1;
-                    }
-                    // a must be equal to b
-                    return 0;
-                });
                 for (var i = 0, image; image = newImages[i]; i++) {
                     $scope.$apply(function () {
                         $scope.images.push(image);
                     });
                 }
                 console.log("Done loading files");
+                $scope.shouldConfirmReload = true;
+                $('#myModal').unbind('show');
+                return;
             }
+
+            currentFileUpload = currentFileUpload+1;
+            showImagePreview(filesUploaded[currentFileUpload], filesUploaded.length);
         }
 
     })(jQuery, plupload);
