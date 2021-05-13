@@ -1,6 +1,8 @@
-## Synopsis
+## Deprecated
 
 NOTE: This code base has been deprecated and will not be maintained going forward.
+
+## Synopsis
 
 A single page angular web app where you can drop pictures into the UI, and then generate a pdf of the images.
 It is a standalone web app and does not rely on outside services.
