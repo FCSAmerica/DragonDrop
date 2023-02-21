@@ -12,14 +12,15 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DragonDrop</RootNamespace>
-    <AssemblyName>DragonDrop</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AssemblyName>FCSAmerica.DragonDrop</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,70 +41,77 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\bootstrap\bootstrap.css" />
-    <Content Include="css\shepherd-theme-arrows.css" />
-    <Content Include="css\style.css" />
-    <Content Include="fonts\aloveofthunder-webfont-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="images\backgroundimage.jpg" />
-    <Content Include="images\close.png" />
-    <Content Include="images\logo.png" />
-    <Content Include="images\lastnamef.png" />
-    <Content Include="images\overlay-background.png" />
-    <Content Include="images\spinner_192.gif" />
-    <Content Include="index.html" />
-    <Content Include="js\angular.1.1.5.min.js" />
-    <Content Include="js\app.js" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\cache.js" />
-    <Content Include="js\image-controller.js" />
-    <Content Include="js\jsPDF\Blob.js" />
-    <Content Include="js\jsPDF\BlobBuilder.min.js" />
-    <Content Include="js\jsPDF\FileSaver.min.js" />
-    <Content Include="js\jsPDF\imageCompression.js" />
-    <Content Include="js\jsPDF\jspdf.js" />
-    <Content Include="js\jsPDF\jspdf.plugin.addimage.js" />
-    <Content Include="js\jsPDF\jspdf.plugin.centertext.js" />
-    <Content Include="js\jsPDF\jspdf.plugin.split_text_to_size.js" />
-    <Content Include="js\jsPDF\jspdf.plugin.standard_fonts_plugin.js" />
-    <Content Include="js\jsPDF\PDFModule.js" />
-    <Content Include="js\load-image.all.min.js" />
-    <Content Include="js\plupload.full.min.js" />
-    <Content Include="js\shepherd.min.js" />
-    <Content Include="js\sortable.js" />
+    <Content Include="version.txt" />
     <Content Include="Web.config" />
+    <Content Include="Content\css\bootstrap\bootstrap.css" />
+    <Content Include="Content\css\jquery-ui.css" />
+    <Content Include="Content\css\shepherd-theme-arrows.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\fonts\aloveofthunder-webfont-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\health.html" />
+    <Content Include="Content\images\backgroundimage.jpg" />
+    <Content Include="Content\images\close.png" />
+    <Content Include="Content\images\lastnamef.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\overlay-background.png" />
+    <Content Include="Content\images\spinner_192.gif" />
+    <Content Include="Content\index.html" />
+    <Content Include="Content\js\app.js" />
+    <Content Include="Content\js\image-controller.js" />
+    <Content Include="Content\js\PDFModule.js" />
+    <Content Include="Content\js\sortable.js" />
+    <Content Include="Content\js\vendor\angular.min.js" />
+    <Content Include="Content\js\vendor\jsPDF\Blob.js" />
+    <Content Include="Content\js\vendor\jsPDF\BlobBuilder.min.js" />
+    <Content Include="Content\js\vendor\jsPDF\FileSaver.min.js" />
+    <Content Include="Content\js\vendor\jsPDF\imageCompression.js" />
+    <Content Include="Content\js\vendor\jsPDF\jspdf.js" />
+    <Content Include="Content\js\vendor\jsPDF\jspdf.plugin.addimage.js" />
+    <Content Include="Content\js\vendor\jsPDF\jspdf.plugin.centertext.js" />
+    <Content Include="Content\js\vendor\jsPDF\jspdf.plugin.split_text_to_size.js" />
+    <Content Include="Content\js\vendor\jsPDF\jspdf.plugin.standard_fonts_plugin.js" />
+    <Content Include="Content\js\vendor\load-image.all.min.js" />
+    <Content Include="Content\js\vendor\plupload.full.min.js" />
+    <Content Include="Content\js\vendor\shepherd.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\aloveofthunder-webfont-webfont.eot" />
-    <Content Include="fonts\aloveofthunder-webfont-webfont.ttf" />
-    <Content Include="fonts\aloveofthunder-webfont-webfont.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="dragon.appcache" />
+    <Content Include="Content\fonts\aloveofthunder-webfont-webfont.eot" />
+    <Content Include="Content\fonts\aloveofthunder-webfont-webfont.ttf" />
+    <Content Include="Content\fonts\aloveofthunder-webfont-webfont.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
