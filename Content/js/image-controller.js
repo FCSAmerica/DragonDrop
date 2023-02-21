@@ -207,7 +207,7 @@ var ImageController = function ($scope) {
             console.log(filesUploaded[currentFileUpload]);
             totalNumberOfFiles = totalFiles;
             var options = { meta: true, orientation: true, maxHeight: imageSize, maxWidth: imageSize };
-            loadImage(file.getNative(), finishLoadingImages, options);
+            loadImage(file.getSource().getSource(), finishLoadingImages, options);
 
         }
         function finishLoadingImages(img, data) {
