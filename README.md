@@ -9,4 +9,8 @@ Host the web folder in a web server and then you can just browse to index.html.
 
 ## License
 
- Apache License Version 2.0, see LICENSE file in root of repository
+Apache License Version 2.0, see LICENSE file in root of repository
+
+## Notes
+
+There are components used which have an AGPL license. This code and any updates are available publicly in order to satisfy the AGPL license requirements.
